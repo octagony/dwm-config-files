@@ -19,4 +19,12 @@
 * **preserveonrestart**
 * **restartsig**
 
+#### DMenu Patches:
+* **caseinsensitive**
+* **lineheight**
+* **fuzzyhighlight**
 
+#### St Patches:
+* **alpha**
+* **scrollback**
+* **scrollback-mouse**
