@@ -25,6 +25,7 @@
 * **fuzzyhighlight**
 * **center**
 * **border**
+* **grid**
 
 #### St Patches:
 * **alpha**

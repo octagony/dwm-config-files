@@ -1,33 +1,18 @@
 --- dmenu.c
 +++ dmenu.c
-@@ -664,11 +681,17 @@ setup(void)
- 		if (!XGetWindowAttributes(dpy, parentwin, &wa))
- 			die("could not get embedding window attributes: 0x%lx",
- 			    parentwin);
--		x = 0;
--		y = topbar ? 0 : wa.height - mh;
--		mw = wa.width;
-+
-+		if (centered) {
-+			mw = MIN(MAX(max_textw() + promptw, min_width), wa.width);
-+			x = (wa.width  - mw) / 2;
-+			y = (wa.height - mh) / 2;
-+		} else {
-+			x = 0;
-+			y = topbar ? 0 : wa.height - mh;
-+			mw = wa.width;
-+		}
- 	}
--	promptw = (prompt && *prompt) ? TEXTW(prompt) - lrpad / 4 : 0;
- 	inputw = MIN(inputw, mw/3);
- 	match();
- 
-@@ -726,6 +749,8 @@ main(int argc, char *argv[])
- 			topbar = 0;
- 		else if (!strcmp(argv[i], "-f"))   /* grabs keyboard before reading stdin */
- 			fast = 1;
-+		else if (!strcmp(argv[i], "-c"))   /* centers dmenu on screen */
-+			centered = 1;
- 		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
- 			fstrncmp = strncasecmp;
- 			fstrstr = cistrstr;
+@@ -714,9 +720,13 @@ main(int argc, char *argv[])
+ 		} else if (i + 1 == argc)
+ 			usage();
+ 		/* these options take one argument */
+-		else if (!strcmp(argv[i], "-l"))   /* number of lines in vertical list */
++		else if (!strcmp(argv[i], "-g")) {   /* number of columns in grid */
++			columns = atoi(argv[++i]);
++			if (lines == 0) lines = 1;
++		} else if (!strcmp(argv[i], "-l")) { /* number of lines in grid */
+ 			lines = atoi(argv[++i]);
+-		else if (!strcmp(argv[i], "-m"))
++			if (columns == 0) columns = 1;
++		} else if (!strcmp(argv[i], "-m"))
+ 			mon = atoi(argv[++i]);
+ 		else if (!strcmp(argv[i], "-p"))   /* adds prompt to left of input field */
+ 			prompt = argv[++i];
