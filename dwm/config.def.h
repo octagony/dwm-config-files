@@ -2,7 +2,7 @@
 
  
 /* appearance */
-#include "/home/octagony/.config/dwm/colorschemes/dracula.h"
+#include "/home/octagony/.config/dwm/colorschemes/darkGT.h"
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { ">_", "www", "</>", "~/", };
+static const char *tags[] = { " >_ ", " www ", " </> ", " ~/  ", " gg "};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -64,21 +64,23 @@ static const char *dmenucmd[] = { "dmenu_run", "-h", "24", "-fn", dmenufont, "-n
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[]  = { "brightnessctl", "set", "10%-", NULL };
-static const char *flameshot[]  = { "flameshot", "gui" };  
+static const char *flameshot[]  = { "flameshot", "gui", NULL };  
 static const char *upvol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutevol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "toggle", NULL };
 static const char *ranger[]  = { "st", "ranger", NULL };
+static const char *powermenu[] = { "/home/octagony/.config/dmenu/scripts/powermenu.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,         		 {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,         		{.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          		{.v = termcmd } },
 	{ 0, 				XF86XK_MonBrightnessUp, 	spawn, 	{.v = brupcmd} },
 	{ 0, 				XF86XK_MonBrightnessDown, 	spawn, 	{.v = brdowncmd} },
 	{ 0, 				XF86XK_AudioLowerVolume, 	spawn, 	{.v = downvol} },
 	{ 0, 				XF86XK_AudioRaiseVolume, 	spawn, 	{.v = upvol} },
 	{ 0, 				XF86XK_AudioMute, 		spawn, 	{.v = mutevol} },
+	{ MOD2KEY|ControlMask, 		XK_Delete, 			spawn, 	{.v = powermenu} },
 	{ MOD2KEY,                      XK_s,      spawn,      			{.v = flameshot} },
 	{ MOD2KEY|ControlMask,          XK_r,      spawn,      			{.v = ranger} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
