@@ -23,6 +23,8 @@
 * **caseinsensitive**
 * **lineheight**
 * **fuzzyhighlight**
+* **center**
+* **border**
 
 #### St Patches:
 * **alpha**
