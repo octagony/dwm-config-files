@@ -18,6 +18,7 @@
 * **pertag**
 * **preserveonrestart**
 * **restartsig**
+* **movestack**
 
 #### DMenu Patches:
 * **caseinsensitive**
