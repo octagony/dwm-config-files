@@ -2,7 +2,7 @@
 
  
 /* appearance */
-#include "/home/octagony/.config/dwm/colorschemes/darkGT.h"
+#include "/home/octagony/.config/dwm/colorschemes/bananaTime.h"
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -68,7 +68,7 @@ static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *upvol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutevol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "toggle", NULL };
-static const char *ranger[]  = { "st", "ranger", NULL };
+static const char *nnn[]  = { "st", "nnn", NULL };
 static const char *powermenu[] = { "/home/octagony/.config/dmenu/scripts/powermenu.sh", NULL};
 
 #include "movestack.c"
@@ -83,7 +83,9 @@ static const Key keys[] = {
 	{ 0, 				XF86XK_AudioMute, 		spawn, 	{.v = mutevol} },
 	{ MOD2KEY|ControlMask, 		XK_Delete, 			spawn, 	{.v = powermenu} },
 	{ MOD2KEY,                      XK_s,      spawn,      			{.v = flameshot} },
-	{ MOD2KEY|ControlMask,          XK_r,      spawn,      			{.v = ranger} },
+	{ MOD2KEY|ControlMask,          XK_n,      spawn,      			{.v = nnn} },
+	{ MOD2KEY|ControlMask,          XK_f,      spawn,      			SHCMD("firefox")},
+	{ MOD2KEY|ControlMask,          XK_p,      spawn,      			SHCMD("pcmanfm")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
