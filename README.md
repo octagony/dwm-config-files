@@ -12,13 +12,14 @@
 
 #### DWM Patches:
 * **alwayscenter**
+* **activetagindicatorbar**
 * **attachbottom**
 * **autostart**
-* **fibonacci**
 * **pertag**
 * **preserveonrestart**
 * **restartsig**
-* **movestack**
+* **statuspadding**
+* **uselessgap**
 
 #### DMenu Patches:
 * **caseinsensitive**
