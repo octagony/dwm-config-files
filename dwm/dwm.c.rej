@@ -1,11 +1,29 @@
 --- dwm.c
 +++ dwm.c
-@@ -1910,7 +1920,7 @@ updategeom(void)
- 					m->clients = c->next;
- 					detachstack(c);
- 					c->mon = mons;
--					attach(c);
-+					attachbottom(c);
- 					attachstack(c);
- 				}
- 				if (m == selmon)
+@@ -1061,6 +1062,26 @@ manage(Window w, XWindowAttributes *wa)
+ 	updatewindowtype(c);
+ 	updatesizehints(c);
+ 	updatewmhints(c);
++	{
++		int format;
++		unsigned long *data, n, extra;
++		Monitor *m;
++		Atom atom;
++		if (XGetWindowProperty(dpy, c->win, netatom[NetClientInfo], 0L, 2L, False, XA_CARDINAL,
++				&atom, &format, &n, &extra, (unsigned char **)&data) == Success && n == 2) {
++			c->tags = *data;
++			for (m = mons; m; m = m->next) {
++				if (m->num == *(data+1)) {
++					c->mon = m;
++					break;
++				}
++			}
++		}
++		if (n > 0)
++			XFree(data);
++	}
++	setclienttagprop(c);
++
+ 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
+ 	grabbuttons(c, 0);
+ 	if (!c->isfloating)
