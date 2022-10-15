@@ -2,7 +2,7 @@
 
 /* appearance */
 
-#include "/home/octagony/.config/dwm/colorschemes/bananaTime.h"
+#include "/home/octagony/.config/dwm/colorschemes/bananaTime.h" 
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -87,6 +87,7 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
 	{ MOD2KEY|ControlMask,          XK_p,                        spawn,             SHCMD("pcmanfm")},
+	{ MOD2KEY|ControlMask,          XK_BackSpace,                spawn,             SHCMD("slock")},
 	{ MODKEY|ShiftMask,             XK_j,                        rotatestack,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                        rotatestack,       {.i = -1 } },
 	{ MODKEY,                       XK_j,                        focusstack,        {.i = +1 } },

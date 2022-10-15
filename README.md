@@ -1,6 +1,6 @@
 # DWM Config
 
-### Include slstatus, dmenu, st
+### Include slstatus, dmenu, st and slock
 
 #### Require: 
 
@@ -14,12 +14,15 @@
 #### Installation
 
 1. In `.xinitrc` file add this line 
+
     ```
     exec dwm
     ```
+
 1. Create `.dwm` folder in `/home` directory
 2. Put `autostart.sh` file into that folder
 3. Make the `autostart.sh` executable with this command
+
     ```
     sudo chmod +x autostart.sh
     ```
@@ -52,3 +55,7 @@
 * **alpha**
 * **scrollback**
 * **scrollback-mouse**
+
+#### Slock Patches:
+* **capscolor**
+* **message**
