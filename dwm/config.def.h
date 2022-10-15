@@ -6,7 +6,7 @@
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -31,6 +31,7 @@ static const Rule rules[] = {
 	/* class                instance     title         tags mask     isfloating   monitor */
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
+	{ "Pcmanfm",              NULL,       NULL,         1 << 4,       0,           -1 },
 	{ "Steam",                NULL,       NULL,         1 << 5,       1,           -1 },
 };
 
@@ -60,7 +61,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run","-h", "24", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[]  = { "brightnessctl", "set", "10%-", NULL };
@@ -108,6 +109,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period,                   focusmon,          {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                    tagmon,            {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,                   tagmon,            {.i = +1 } },
+	{ MODKEY,                       XK_minus,                    setgaps,           {.i = -1 } },
+  { MODKEY,                       XK_equal,                    setgaps,           {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_equal,                    setgaps,           {.i = 0  } },
 	TAGKEYS(                        XK_1,                                           0)
 	TAGKEYS(                        XK_2,                                           1)
 	TAGKEYS(                        XK_3,                                           2)
