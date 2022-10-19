@@ -55,6 +55,7 @@
 * **alpha**
 * **scrollback**
 * **scrollback-mouse**
+* **glyph-wide-support**
 
 #### Slock Patches:
 * **capscolor**
