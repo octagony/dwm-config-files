@@ -2,11 +2,11 @@
 
 /* appearance */
 
-#include "/home/octagony/.config/dwm/colorschemes/bananaTime.h" 
+#include "/home/octagony/.config/dwm/colorschemes/bananaTime.h"
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
+static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { ">_", "www", "</>", "...", "n³", "gg"};
+static const char *tags[] = { "cmd", "www", "dev", "soc", "mail", "gg"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -30,9 +30,10 @@ static const Rule rules[] = {
 	 */
 	/* class                instance     title         tags mask     isfloating   monitor */
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
-	{ "code-oss",             NULL,       NULL,         1 << 2,       0,           -1 },
+	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
+	{ "Emacs",                NULL,       NULL,         1 << 2,       0,           -1 },
 	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
-	{ "Pcmanfm",              NULL,       NULL,         1 << 4,       0,           -1 },
+	{ "Claws-mail",           NULL,       NULL,         1 << 4,       0,           -1 },
 	{ "Steam",                NULL,       NULL,         1 << 5,       1,           -1 },
 };
 
@@ -66,12 +67,12 @@ static const char *dmenucmd[] = { "dmenu_run","-h", "24", "-fn", dmenufont, "-nb
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[]  = { "brightnessctl", "set", "10%-", NULL };
-static const char *upvol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
-static const char *mutevol[]  = { "/usr/bin/pactl", "set-sink-volume", "0", "toggle", NULL };
-static const char *flameshot[]  = { "flameshot", "gui", NULL };  
-static const char *nnn[]  = { "st", "nnn", NULL };
-static const char *powermenu[] = { "/home/octagony/.config/dmenu/scripts/powermenu.sh", NULL};
+static const char *upvol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "up", NULL};
+static const char *downvol[]  =  { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "down", NULL};
+static const char *mutevol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "mute", NULL};
+static const char *flameshot[]  = { "flameshot", "gui", NULL };
+static const char *nnn[]  = { "st", "./.nnn", NULL };
+static const char *powermenu[] = { "/home/octagony/.config/dwm/scripts/powermenu.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key                          function           argument */
