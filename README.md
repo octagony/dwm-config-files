@@ -22,7 +22,7 @@
 
 1. Create `.dwm` folder in `/home` directory
 2. Put `autostart.sh` file into that folder
-3. Make the `autostart.sh`, `powermenu.sh` and `volumenotifications.sh` executable with this command:
+3. Make the `autostart.sh`, `powermenu.sh`, `volumenotifications.sh` and `brightnessnotifications.sh` executable with this command:
 
     ```
     sudo chmod +x {namescript}.sh

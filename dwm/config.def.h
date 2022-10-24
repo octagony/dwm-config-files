@@ -65,8 +65,8 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run","-h", "24", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-shb", col_gray4,  NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *brupcmd[]  = { "brightnessctl", "set", "10%+", NULL };
-static const char *brdowncmd[]  = { "brightnessctl", "set", "10%-", NULL };
+static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
+static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
 static const char *upvol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "up", NULL};
 static const char *downvol[]  =  { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "down", NULL};
 static const char *mutevol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "mute", NULL};
