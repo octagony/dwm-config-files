@@ -2,7 +2,7 @@
 
 function send_notification(){
     brightness=$(brightnessctl -m | grep -oP '\d+(?=%)')
-    dunstify -a "brightnessnotification" -u low -r "9993" -h int:value:"$brightness" -i "brightness-$1" "Brightness:${brightness}%" -t 2000
+    dunstify -a "brightnessnotification" -u low -r "9994" -h int:value:"$brightness" "Brightness:${brightness}%" -t 2000
 }
 
 case $1 in

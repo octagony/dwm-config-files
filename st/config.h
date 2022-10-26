@@ -6,8 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-#include "/home/octagony/.config/st/colorschemes/dracula.h"
-static char *font = "UbuntuMono Nerd Font:pixelsize=20:antialias=true:autohint=true";
+#include "/home/octagony/.config/st/colorschemes/bananaTime.h"
+static char *font = "UbuntuMono Nerd Font:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
