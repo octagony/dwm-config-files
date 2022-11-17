@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-#include "/home/octagony/.config/st/colorschemes/bananaTime.h"
+#include "/home/octagony/.config/st/colorschemes/catppuccin.h"
 static char *font = "UbuntuMono Nerd Font:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 2;
 
@@ -104,10 +104,10 @@ float alpha = 0.9;
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 258;
 
 /*
  * Default shape of cursor

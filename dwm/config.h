@@ -2,7 +2,7 @@
 
 /* appearance */
 
-#include "/home/octagony/.config/dwm/colorschemes/bananaTime.h"
+#include "/home/octagony/.config/dwm/colorschemes/catppuccin.h"
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -10,8 +10,8 @@ static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int horizpadbar        = 5;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 5;        /* vertical padding for statusbar */
+static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 4;        /* vertical padding for statusbar */
 static const char *fonts[]          = { "UbuntuMono Nerd Font:size=12" };
 static const char dmenufont[]       = "UbuntuMono Nerd Font:size=12"; 
 static const char *colors[][3]      = {
