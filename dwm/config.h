@@ -1,7 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-
 #include "/home/octagony/.config/dwm/colorschemes/catppuccin.h"
 #include "XF86keysym.h"
 
@@ -9,11 +8,11 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 4;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "UbuntuMono Nerd Font:size=12" };
-static const char dmenufont[]       = "UbuntuMono Nerd Font:size=12"; 
+static const int topbar             = 0;        /* 0 means bottom bar */
+static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 2;        /* vertical padding for statusbar */
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=12"; 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -30,6 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class                instance     title         tags mask     isfloating   monitor */
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
+	{ "Brave-browser",        NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
 	{ "Emacs",                NULL,       NULL,         1 << 2,       0,           -1 },
 	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
@@ -45,8 +45,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -88,7 +88,10 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask,          XK_n,                        spawn,             {.v = nnn} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
+	{ MOD2KEY|ControlMask,          XK_d,                        spawn,             SHCMD("doublecmd")},
 	{ MOD2KEY|ControlMask,          XK_p,                        spawn,             SHCMD("pcmanfm")},
+	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
+	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},
 	{ MOD2KEY|ControlMask,          XK_BackSpace,                spawn,             SHCMD("slock")},
 	{ MODKEY|ShiftMask,             XK_j,                        rotatestack,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                        rotatestack,       {.i = -1 } },
@@ -100,7 +103,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,                        setmfact,          {.f = +0.05} },
 	{ MODKEY,                       XK_z,                        zoom,              {0} },
 	{ MODKEY,                       XK_Tab,                      view,              {0} },
-	{ MODKEY|ShiftMask,             XK_q,                        killclient,        {0} },
+	{ MODKEY,       					      XK_q,                        killclient,        {0} },
 	{ MODKEY,                       XK_t,                        setlayout,         {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                        setlayout,         {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,                        setlayout,         {.v = &layouts[2]} },

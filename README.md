@@ -11,7 +11,7 @@
 * **dunst** as notifications manager (include config)
 * **flameshot** - for screenshots
 * **XF86keysym**(include), **brightnessctl** and **pamixer** for the volume and brightness control
-* **Ubuntu Mono Nerd Font** - for fonts
+* **[Nerd Fonts](https://www.nerdfonts.com/)** - as fonts
 * **picom** - as compositor(i use fork from [pijulius](https://github.com/pijulius)) 
 
 #### Installation
