@@ -71,7 +71,7 @@ static const char *upvol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifi
 static const char *downvol[]  =  { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "down", NULL};
 static const char *mutevol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "mute", NULL};
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *nnn[]  = { "st", "./.nnn", NULL };
+static const char *ranger[]  = { "st","-e", "ranger", NULL };
 static const char *powermenu[] = { "/home/octagony/.config/dwm/scripts/powermenu.sh", NULL};
 
 static const Key keys[] = {
@@ -85,7 +85,7 @@ static const Key keys[] = {
 	{ 0, 				                    XF86XK_AudioRaiseVolume, 	   spawn,           	{.v = upvol} },
 	{ 0, 				                    XF86XK_AudioMute, 		       spawn,           	{.v = mutevol} },
 	{ MOD2KEY,                      XK_s,                        spawn,      		   	{.v = flameshot} },
-	{ MOD2KEY|ControlMask,          XK_n,                        spawn,             {.v = nnn} },
+	{ MOD2KEY|ControlMask,          XK_r,                        spawn,             {.v = ranger} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
 	{ MOD2KEY|ControlMask,          XK_d,                        spawn,             SHCMD("doublecmd")},

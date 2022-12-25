@@ -8,7 +8,7 @@ static int min_width = 500;                    /* minimum width when centered */
 static const char *fonts[] = {
 	"UbuntuMono Nerd Font:size=12"
 };
-static const char *prompt      = "What do you want?";      /* -p  option; prompt to the left of input field */
+static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] = { "#bbbbbb", "#222222" },

@@ -2,12 +2,12 @@
 
 ### Include slstatus, dmenu, st and slock
 
-![Alt text](/img/2.png?raw=true "Title")
+![Alt text](/img/3.png?raw=true "Title")
 
 #### Require: 
 
 * **Feh** for backgrounds
-* **NNN** as file manager
+* **Ranger** as file manager
 * **dunst** as notifications manager (include config)
 * **flameshot** - for screenshots
 * **XF86keysym**(include), **brightnessctl** and **pamixer** for the volume and brightness control
