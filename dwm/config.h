@@ -11,8 +11,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 2;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=12"; 
+static const char *fonts[]          = { "UbuntuMono Nerd Font:size=14" };
+static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14"; 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
