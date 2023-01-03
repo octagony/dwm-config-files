@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run","-h", "24", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-shb", col_gray4,  NULL };
+static const char *dmenucmd[] = { "dmenu_run","-h", "54", "-c", "-l", "4", "-g", "2", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-shb", col_gray4,  NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
@@ -93,6 +93,7 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
 	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},
 	{ MOD2KEY|ControlMask,          XK_BackSpace,                spawn,             SHCMD("slock")},
+	{ MOD2KEY|ControlMask,          XK_x,                				 spawn,             SHCMD("xfe")},
 	{ MODKEY|ShiftMask,             XK_j,                        rotatestack,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                        rotatestack,       {.i = -1 } },
 	{ MODKEY,                       XK_j,                        focusstack,        {.i = +1 } },
