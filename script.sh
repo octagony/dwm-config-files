@@ -35,9 +35,9 @@ cp -r "$HOME"/dwm-config-files/.wallpapers "$HOME"
 cd "$HOME/.config"
 sudo git clone https://github.com/pijulius/picom.git
 cd picom/
-git submodule update --init --recursive
-meson --buildtype=release . build
-ninja -C build
+sudo git submodule update --init --recursive
+sudo meson --buildtype=release . build
+sudo ninja -C build
 
 echo "Now, just type startx"
 
