@@ -4,41 +4,43 @@
 
 ![Alt text](/img/3.png?raw=true "Title")
 
-#### Require: 
+#### What i use: 
 
-* **Feh** for backgrounds
+* **Feh** as wallpapers manager
 * **Ranger** as file manager
 * **dunst** as notifications manager (include config)
-* **flameshot** - for screenshots
-* **XF86keysym**(include), **brightnessctl** and **pamixer** for the volume and brightness control
-* **[Nerd Fonts](https://www.nerdfonts.com/)** - as fonts
+* **flameshot** for screenshots
+* **brightnessctl** and **pamixer** for the volume and brightness control
+* **[Ubuntu Mono Nerd Font](https://archlinux.org/packages/community/any/ttf-ubuntumono-nerd/)** - as fonts
 * **picom** - as compositor(i use fork from [pijulius](https://github.com/pijulius)) 
 
 #### Installation
 
-1. In `.xinitrc` file add this line 
+1.  Install `git` 
 
     ```
-    exec dwm
+    sudo pacman -Sy git 
     ```
 
-1. Create `.dwm` folder in `/home` directory
-2. Put `autostart.sh` file into that folder
-3. Make the `autostart.sh`, `powermenu.sh`, `volumenotifications.sh` and `brightnessnotifications.sh` executable with this command:
+2. Copy this repository to home folder
 
     ```
-    sudo chmod +x {namescript}.sh
+    cd $HOME
+    sudo git clone https://github.com/octagony/dwm-config-files.git
     ```
 
-4. In config.h (or config.def.h) changes the paths to the scripts:
+3. Make `script.sh` executable and run it
 
+    
     ```
-    "/home/{user_name}/.config/dwm/scripts/{scriptname}.sh" 
+    sudo chmod +x script.sh
+    ./script.sh
     ```
+    
 
 #### Feh directory (for backgrounds):
 ```
-/home/{user_name}/Downloads/wallpapers
+/home/{user_name}/.wallpapers
 ```
 
 #### DWM Patches:

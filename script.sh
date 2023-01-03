@@ -1,7 +1,7 @@
 #!/bin/bash
 CONF=$HOME/.config
 cd "$HOME" || exit 
-sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk dunst pcmanfm ranger flameshot feh brightnessctl pamixer
+sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk dunst pcmanfm ranger flameshot feh brightnessctl pamixer ttf-ubuntumono-nerd firefox
 
 if [ ! -d "$CONF" ];
 then
@@ -29,7 +29,7 @@ sudo chmod +x "$HOME"/.config/dwm/scripts/{powermenu.sh,volumenotifications.sh,b
 cd "$HOME" || exit
 mkdir .dwm
 cp "$HOME"/dwm-config-files/autostart.sh "$HOME"/.dwm/
-
+cp -r "$HOME"/dwm-config-files/.wallpapers "$HOME"
 
 echo "Now, just type startx"
 
