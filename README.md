@@ -8,7 +8,7 @@
 
 * **Feh** as wallpapers manager
 * **Ranger** as file manager
-* **dunst** as notifications manager (include config)
+* **vifm** as notifications manager (include config)
 * **flameshot** for screenshots
 * **brightnessctl** and **pamixer** for the volume and brightness control
 * **[Ubuntu Mono Nerd Font](https://archlinux.org/packages/community/any/ttf-ubuntumono-nerd/)** - as fonts

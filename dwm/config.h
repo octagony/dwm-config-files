@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-#include "/home/octagony/.config/dwm/colorschemes/catppuccin.h"
+#include "./colorschemes/catppuccin.h"
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -31,7 +31,6 @@ static const Rule rules[] = {
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "Brave-browser",        NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
-	{ "Emacs",                NULL,       NULL,         1 << 2,       0,           -1 },
 	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
 	{ "Claws-mail",           NULL,       NULL,         1 << 4,       0,           -1 },
 	{ "Steam",                NULL,       NULL,         1 << 5,       1,           -1 },
@@ -71,7 +70,7 @@ static const char *upvol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifi
 static const char *downvol[]  =  { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "down", NULL};
 static const char *mutevol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "mute", NULL};
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *ranger[]  = { "st","-e", "ranger", NULL };
+static const char *vifm[]  = { "st","-e", "vifm", NULL };
 static const char *powermenu[] = { "/home/octagony/.config/dwm/scripts/powermenu.sh", NULL};
 
 static const Key keys[] = {
@@ -85,10 +84,9 @@ static const Key keys[] = {
 	{ 0, 				                    XF86XK_AudioRaiseVolume, 	   spawn,           	{.v = upvol} },
 	{ 0, 				                    XF86XK_AudioMute, 		       spawn,           	{.v = mutevol} },
 	{ MOD2KEY,                      XK_s,                        spawn,      		   	{.v = flameshot} },
-	{ MOD2KEY|ControlMask,          XK_r,                        spawn,             {.v = ranger} },
+	{ MOD2KEY|ControlMask,          XK_v,                        spawn,             {.v = vifm} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
-	{ MOD2KEY|ControlMask,          XK_d,                        spawn,             SHCMD("doublecmd")},
 	{ MOD2KEY|ControlMask,          XK_p,                        spawn,             SHCMD("pcmanfm")},
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
 	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},

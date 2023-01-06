@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-#include "/home/octagony/.config/st/colorschemes/catppuccin.h"
+#include "./colorschemes/catppuccin.h"
 static char *font = "UbuntuMono Nerd Font:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 2;
 
