@@ -7,10 +7,10 @@
 #### What i use:
 
 - **Feh** as wallpapers manager
-- **Ranger** as file manager
-- **vifm** as notifications manager (include config)
+- **vifm** as file manager
+- **dunst** as notifications manager (include config)
 - **flameshot** for screenshots
-- **brightnessctl** and **pamixer** for the volume and brightness control
+- **brightnessctl** and **pamixer** for volume and brightness control
 - **[Ubuntu Mono Nerd Font](https://archlinux.org/packages/community/any/ttf-ubuntumono-nerd/)** - as fonts
 - **picom** - as compositor(i use fork from [pijulius](https://github.com/pijulius))
 
