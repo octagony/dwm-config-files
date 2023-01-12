@@ -1,31 +1,22 @@
 --- dwm.c
 +++ dwm.c
-@@ -1697,18 +1710,18 @@ tile(Monitor *m)
-	if (n > m->nmaster)
- 		mw = m->nmaster ? m->ww * m->mfact : 0;
- 	else
--		mw = m->ww;
--	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
-+		mw = m->ww - m->gappx;
-+	for (i = 0, my = ty = m->gappx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
- 		if (i < m->nmaster) {
--			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
--			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
--			if (my + HEIGHT(c) < m->wh)
--				my += HEIGHT(c);
-+			h = (m->wh - my) / (MIN(n, m->nmaster) - i) - m->gappx;
-+			resize(c, m->wx + m->gappx, m->wy + my, mw - (2*c->bw) - m->gappx, h - (2*c->bw), 0);
-+			if (my + HEIGHT(c) + m->gappx < m->wh)
-+				my += HEIGHT(c) + m->gappx;
- 		} else {
--			h = (m->wh - ty) / (n - i);
--			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
--			if (ty + HEIGHT(c) < m->wh)
--				ty += HEIGHT(c);
-+			h = (m->wh - ty) / (n - i) - m->gappx;
-+			resize(c, m->wx + mw + m->gappx, m->wy + ty, m->ww - mw - (2*c->bw) - 2*m->gappx, h - (2*c->bw), 0);
-+			if (ty + HEIGHT(c) + m->gappx < m->wh)
-+				ty += HEIGHT(c) + m->gappx;
- 		}
- }
+@@ -708,7 +710,7 @@ drawbar(Monitor *m)
+ 	if (m == selmon) { /* status is only drawn on selected monitor */
+ 		drw_setscheme(drw, scheme[SchemeNorm]);
+ 		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+-		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
++		drw_text(drw, m->ww - tw - 2 * sp, 0, tw, bh, 0, stext, 0);
+ 	}
  
+ 	for (c = m->clients; c; c = c->next) {
+@@ -1549,7 +1551,10 @@ setup(void)
+ 		die("no fonts could be loaded.");
+ 	lrpad = drw->fonts->h;
+ 	bh = drw->fonts->h + 2;
++	sp = sidepad;
++	vp = (topbar == 1) ? vertpad : - vertpad;
+ 	updategeom();
++
+ 	/* init atoms */
+ 	utf8string = XInternAtom(dpy, "UTF8_STRING", False);
+ 	wmatom[WMProtocols] = XInternAtom(dpy, "WM_PROTOCOLS", False);

@@ -4,13 +4,14 @@
 #include "./colorschemes/catppuccin.h"
 #include "XF86keysym.h"
 
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 4;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
-static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 2;        /* vertical padding for statusbar */
+static const unsigned int borderpx  = 3;       /* border pixel of windows */
+static const unsigned int gappx     = 4;       /* gaps between windows */
+static const unsigned int snap      = 32;      /* snap pixel */
+static const int showbar            = 1;       /* 0 means no bar */
+static const int topbar             = 0;       /* 0 means bottom bar */
+static const int horizpad           = 2;       /* horizontal padding for statusbar */
+static const int vertpad            = 7;       /* vertical padding for statusbar */
+static const int sidepad            = 7;       /* horizontal padding  for statusbar */
 static const char *fonts[]          = { "UbuntuMono Nerd Font:size=14" };
 static const char dmenufont[]       = "UbuntuMono Nerd Font:size=14"; 
 static const char *colors[][3]      = {

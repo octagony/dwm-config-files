@@ -2,7 +2,7 @@
 
 ### Include slstatus, dmenu, st and slock
 
-![Alt text](/img/heroImage.png?raw=true "Title")
+![Alt text](/img/mainImage.png?raw=true "Title")
 
 #### What i use:
 
@@ -53,6 +53,7 @@
 - **restartsig**
 - **statuspadding**
 - **fullgaps**
+- **barpadding**
 
 #### DMenu Patches:
 
