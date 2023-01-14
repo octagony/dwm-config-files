@@ -2,13 +2,13 @@
 
 ### Include slstatus, dmenu, st and slock
 
-![Alt text](/img/mainImage.png?raw=true "Title")
+![Alt text](/img/heroImage.png?raw=true "Title")
 
 #### What i use:
 
 - **Feh** as wallpapers manager
-- **Ranger** as file manager
-- **vifm** as notifications manager (include config)
+- **vifm** as file manager (include config)
+- **dunst** as notifications manager (include config)
 - **flameshot** for screenshots
 - **brightnessctl** and **pamixer** for the volume and brightness control
 - **[Ubuntu Mono Nerd Font](https://archlinux.org/packages/community/any/ttf-ubuntumono-nerd/)** - as fonts
@@ -54,6 +54,7 @@
 - **statuspadding**
 - **fullgaps**
 - **barpadding**
+- **status2d**
 
 #### DMenu Patches:
 
