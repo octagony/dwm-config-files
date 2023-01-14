@@ -24,16 +24,14 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 200
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
-
+    height = 200
     # Position the notification in the top right corner
-    origin = top-center
-
+    origin = top-right
     # Offset from the origin
-    offset = 10x50
+    offset = 20x50
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -68,7 +66,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+    transparency = 5
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -90,13 +88,13 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#cba6f7"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 10
 
     # Define a color for the separator.
     # possible values are:
@@ -162,7 +160,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center 
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -201,7 +199,7 @@
     # icon_theme = "Adwaita, breeze"
 
     # Align icons left/right/top/off
-    icon_position = left
+    icon_position = center
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
@@ -245,7 +243,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 12
+    corner_radius = 20
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -315,8 +313,8 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
