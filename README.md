@@ -11,7 +11,7 @@
 - **dunst** as notifications manager (include config)
 - **flameshot** for screenshots
 - **brightnessctl** and **pamixer** for volume and brightness control
-- **[Ubuntu Mono Nerd Font](https://archlinux.org/packages/community/any/ttf-ubuntumono-nerd/)** - as fonts
+- **[Ubuntu Mono Nerd Font](https://archlinux.org/packages/community/any/ttf-ubuntumono-nerd/)** & **[JetBrainsMono Font](https://archlinux.org/packages/community/any/ttf-jetbrains-mono/)** - as fonts
 - **picom** - as compositor(i use fork from [pijulius](https://github.com/pijulius))
 
 #### Installation

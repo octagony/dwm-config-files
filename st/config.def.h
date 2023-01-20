@@ -7,7 +7,7 @@
  */
 
 #include "./colorschemes/catppuccin.h"
-static char *font = "UbuntuMono Nerd Font:pixelsize=22:antialias=true:autohint=true";
+static char *font = "JetBrainsMono-Regular:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*

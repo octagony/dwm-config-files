@@ -2,7 +2,7 @@
 CONF=$HOME/.config
 
 cd "$HOME" || exit 
-sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm ranger flameshot feh brightnessctl pamixer ttf-ubuntumono-nerd firefox vifm
+sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm ranger flameshot feh brightnessctl pamixer ttf-ubuntumono-nerd ttf-jetbrains-mono firefox vifm 
 
 if [ ! -d "$CONF" ];
 then

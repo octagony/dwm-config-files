@@ -2,7 +2,7 @@
 
 function powermenu {
 	options="Cancel\nShutdown\nRestart\nSleep"
-	selected=$(echo -e $options | dmenu -c -g 2 -fn "Hack Bold Nerd Font" -nb "#1e1d2d" -nf "#abe9b3" -sb "#d5aeea" -sf "#1e1d2d" -l 2 -h 54  ) 
+	selected=$(echo -e $options | dmenu -c -g 2 -fn "Ubuntu Mono Nerd Font" -nb "#1e1d2d" -nf "#abe9b3" -sb "#d5aeea" -sf "#1e1d2d" -l 2 -h 54  ) 
 	if [[ $selected = "Shutdown" ]]; then
 		poweroff
 	elif [[ $selected = "Restart" ]]; then
