@@ -66,12 +66,12 @@ static const char unknown_str[] = "n/a";
 
 static const struct arg args[] = {
 	/* function 		      format         		    argument */
-	{ cpu_perc, 		      "^c#f38ba8^[   %s%% | ",      NULL },
-	{ ram_perc, 		      "^c#f38ba8^   %s%% ] ",         NULL },
-  { wifi_essid,         "^c#a6e3a1^[   %s | ",         "wlan0" },	
-	{ battery_perc, 	    "^c#a6e3a1^  %s%% ] ",          "BAT1" },
-	{ kernel_release, 		"^c#94e2d5^[   %s | ",         NULL },
-	{ keymap, 		      	"^c#94e2d5^   %s ] ",	          NULL },
-	{ datetime,           "%s",          		    "^c#74c7ec^[   %a, %d.%m. |^c#74c7ec^   %I:%M %p ]" },
+	{ cpu_perc, 		      "^c#f38ba8^   %s%% | ",      NULL },
+	{ ram_perc, 		      "^c#f2cdcd^   %s%% |",         NULL },
+  { wifi_essid,         "^c#fab387^   %s | ",         "wlan0" },	
+	{ battery_perc, 	    "^c#a6e3a1^  %s%% | ",          "BAT1" },
+	{ kernel_release, 		"^c#a6adc8^   %s | ",         NULL },
+	{ keymap, 		      	"^c#94e2d5^   %s | ",	          NULL },
+	{ datetime,           "%s",          		    "^c#89dceb^   %a, %d.%m. |^c#74c7ec^   %I:%M %p " },
 
 };

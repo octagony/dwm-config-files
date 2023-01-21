@@ -186,16 +186,12 @@ command! reload :write | restart full
 
 " Pdf
 filextype {*.pdf},<application/pdf> okular %c %i &, apvlv %c, xpdf %c
-fileviewer {*.pdf},<application/pdf> okular -nopgbrk %c -
-
-
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
         \ {View in zathura}
         \ zathura %f,
         \ {View in gv}
         \ gv %c %i &,
-
 " Djvu
 filextype {*.djvu},<image/vnd.djvu>
         \ {View in zathura}
@@ -234,7 +230,6 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
            \*.as[fx]},
           \<video/*>
          \ ffprobe -hide_banner -pretty %c 2>&1
-
 " Web
 filextype {*.xhtml,*.html,*.htm},<text/html>
         \ {Open with qutebrowser}
