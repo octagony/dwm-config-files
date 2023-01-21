@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                instance     title         tags mask     isfloating   monitor */
+  { "krusader",             NULL,       NULL,         1 << 0,       1,           -1 },
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "Brave-browser",        NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
@@ -92,7 +93,7 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
 	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},
 	{ MOD2KEY|ControlMask,          XK_BackSpace,                spawn,             SHCMD("slock")},
-	{ MOD2KEY|ControlMask,          XK_x,                				 spawn,             SHCMD("xfe")},
+	{ MOD2KEY|ControlMask,          XK_k,                				 spawn,             SHCMD("krusader")},
 	{ MODKEY|ShiftMask,             XK_j,                        rotatestack,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                        rotatestack,       {.i = -1 } },
 	{ MODKEY,                       XK_j,                        focusstack,        {.i = +1 } },
