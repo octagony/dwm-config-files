@@ -33,6 +33,7 @@ static const Rule rules[] = {
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "Brave-browser",        NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
+	{ "spotify",              NULL,       "Spotify",         1 << 2,       1,           -1 },
 	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
 	{ "Claws-mail",           NULL,       NULL,         1 << 4,       0,           -1 },
 	{ "Steam",                NULL,       NULL,         1 << 5,       1,           -1 },
@@ -64,7 +65,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-shb", col_gray4,  NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-shb", "#1e1e2e", "-shf","#89dceb", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
