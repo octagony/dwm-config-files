@@ -65,7 +65,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-shb", "#1e1e2e", "-shf","#89dceb", "-nhb", "#1e1e2e", "-nhf","#89dceb" ,NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-shb", "#1e1e2e", "-shf","#f38ba8", "-nhb", "#1e1e2e", "-nhf","#f38ba8" ,NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
@@ -90,7 +90,6 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask,          XK_v,                        spawn,             {.v = vifm} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
-	{ MOD2KEY|ControlMask,          XK_p,                        spawn,             SHCMD("pcmanfm")},
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
 	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},
 	{ MOD2KEY|ControlMask,          XK_BackSpace,                spawn,             SHCMD("slock")},
