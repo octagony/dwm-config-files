@@ -65,7 +65,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-shb", "#1e1e2e", "-shf","#89dceb", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-shb", "#1e1e2e", "-shf","#89dceb", "-nhb", "#1e1e2e", "-nhf","#89dceb" ,NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
