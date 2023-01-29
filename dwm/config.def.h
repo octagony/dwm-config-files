@@ -5,7 +5,7 @@
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;       /* border pixel of windows */
-static const unsigned int gappx     = 5;       /* gaps between windows */
+static const unsigned int gappx     = 8;       /* gaps between windows */
 static const unsigned int snap      = 32;      /* snap pixel */
 static const int showbar            = 1;       /* 0 means no bar */
 static const int topbar             = 1;       /* 0 means bottom bar */
@@ -72,6 +72,9 @@ static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightne
 static const char *upvol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "up", NULL};
 static const char *downvol[]  =  { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "down", NULL};
 static const char *mutevol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "mute", NULL};
+static const char *prevtrack[]  = { "playerctl", "previous", NULL};
+static const char *nexttrack[]  = { "playerctl", "next", NULL};
+static const char *playpausetrack[]  = { "playerctl", "play-pause", NULL};
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *vifm[]  = { "st","-e", "vifm", NULL };
 static const char *powermenu[] = { "/home/octagony/.config/dwm/scripts/powermenu.sh", NULL};
@@ -86,6 +89,10 @@ static const Key keys[] = {
 	{ 0, 				                    XF86XK_AudioLowerVolume, 	   spawn,           	{.v = downvol} },
 	{ 0, 				                    XF86XK_AudioRaiseVolume, 	   spawn,           	{.v = upvol} },
 	{ 0, 				                    XF86XK_AudioMute, 		       spawn,           	{.v = mutevol} },
+	{ 0, 				                    XF86XK_AudioPrev,						 spawn,           	{.v = prevtrack} },
+	{ 0, 				                    XF86XK_AudioNext,						 spawn,           	{.v = nexttrack} },
+	{ 0, 				                    XF86XK_AudioNext,						 spawn,           	{.v = nexttrack} },
+	{ 0, 				                    XF86XK_AudioPlay,						 spawn,           	{.v = playpausetrack} },
 	{ MOD2KEY,                      XK_s,                        spawn,      		   	{.v = flameshot} },
 	{ MOD2KEY|ControlMask,          XK_v,                        spawn,             {.v = vifm} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
