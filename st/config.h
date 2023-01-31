@@ -1,5 +1,5 @@
 #include "./colorschemes/catppuccin.h"
-static char *font = "JetBrainsMono-Regular:pixelsize=22:antialias=true:autohint=true";
+static char *font = "UbuntuMono Nerd Font:size=18:antialias=true:hinting=true";
 static int borderpx = 2;
 
 static char *shell = "/bin/sh";
