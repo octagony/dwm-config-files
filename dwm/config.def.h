@@ -1,7 +1,3 @@
-
-/* See LICENSE file for copyright and license details. */
-
-/* appearance */
 #include "./colorschemes/catppuccin.h"
 #include "XF86keysym.h"
 
@@ -9,10 +5,10 @@ static const unsigned int borderpx  = 3;       /* border pixel of windows */
 static const unsigned int gappx     = 8;       /* gaps between windows */
 static const unsigned int snap      = 32;      /* snap pixel */
 static const int showbar            = 1;       /* 0 means no bar */
-static const int topbar             = 1;       /* 0 means bottom bar */
-static const int horizpad           = 5;       /* horizontal padding for statusbar */
-static const int vertpad            = 5;       /* vertical padding for statusbar */
-static const int sidepad            = 0;       /* horizontal padding  for statusbar */
+static const int topbar             = 0;       /* 0 means bottom bar */
+static const int horizpad           = 4;       /* horizontal padding for statusbar */
+static const int vertpad            = 4;       /* vertical padding for statusbar */
+static const int sidepad            = 2;       /* horizontal padding  for statusbar */
 static const char *fonts[]          = { "UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true" };
 static const char dmenufont[]       = "UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true"; 
 static const char *colors[][3]      = {
@@ -20,14 +16,9 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-/* tagging */
 static const char *tags[] = { "cmd", "www", "dev", "soc", "mail", "gg"};
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
 	/* class                instance     title         tags mask     isfloating   monitor */
   { "krusader",             NULL,       NULL,         1 << 0,       1,           -1 },
 	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
@@ -89,7 +80,6 @@ static const Key keys[] = {
 	{ 0, 				                    XF86XK_AudioRaiseVolume, 	   spawn,           	{.v = upvol} },
 	{ 0, 				                    XF86XK_AudioMute, 		       spawn,           	{.v = mutevol} },
 	{ 0, 				                    XF86XK_AudioPrev,						 spawn,           	{.v = prevtrack} },
-	{ 0, 				                    XF86XK_AudioNext,						 spawn,           	{.v = nexttrack} },
 	{ 0, 				                    XF86XK_AudioNext,						 spawn,           	{.v = nexttrack} },
 	{ 0, 				                    XF86XK_AudioPlay,						 spawn,           	{.v = playpausetrack} },
 	{ MOD2KEY,                      XK_s,                        spawn,      		   	{.v = flameshot} },

@@ -247,14 +247,12 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Images
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-        \ {View in sxiv}
+        \ {View in nomacs}
         \ nomacs ,
         \ {View in gpicview}
         \ gpicview %c,
         \ {View in shotwell}
         \ shotwell,
-fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ identify %f
 
 " OpenRaster
 filextype *.ora
