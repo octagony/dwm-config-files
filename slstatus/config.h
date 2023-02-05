@@ -72,6 +72,6 @@ static const struct arg args[] = {
 	{ battery_perc, 	    "  %s%% ] ",          "BAT1" },
 	{ kernel_release, 		"^c#a6e3a1^ [   %s | ",         NULL },
 	{ keymap, 		      	"   %s ] ",	          NULL },
-	{ datetime,           "%s",          		    "^c#89dceb^ [   %a, %d.%m. |^c#74c7ec^   %I:%M %p ]    " },
+	{ datetime,           "%s",          		    "^c#89dceb^ [   %a, %d.%m. |^c#74c7ec^   %I:%M %p ]         " },
 
 };

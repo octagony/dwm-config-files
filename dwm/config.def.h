@@ -6,9 +6,9 @@ static const unsigned int gappx     = 8;       /* gaps between windows */
 static const unsigned int snap      = 32;      /* snap pixel */
 static const int showbar            = 1;       /* 0 means no bar */
 static const int topbar             = 0;       /* 0 means bottom bar */
-static const int horizpad           = 6;       /* horizontal padding for statusbar */
-static const int vertpad            = 6;       /* vertical padding for statusbar */
-static const int sidepad            = 10;       /* horizontal padding  for statusbar */
+static const int horizpad           = 7;       /* horizontal padding for statusbar */
+static const int vertpad            = 7;       /* vertical padding for statusbar */
+static const int sidepad            = 35;       /* horizontal padding  for statusbar */
 static const char *fonts[]          = { "UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true" };
 static const char dmenufont[]       = "UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true"; 
 static const char *colors[][3]      = {
