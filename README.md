@@ -45,7 +45,6 @@
 #### DWM Patches:
 
 - **alwayscenter**
-- **activetagindicatorbar**
 - **attachbottom**
 - **autostart**
 - **pertag**
