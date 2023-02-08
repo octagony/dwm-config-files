@@ -2,7 +2,7 @@
 
 ### Include slstatus, dmenu, st and slock
 
-![Alt text](/img/heroImage.png?raw=true "Title")
+![Alt text](/img/mainImg.png?raw=true "Title")
 
 #### What i use:
 
