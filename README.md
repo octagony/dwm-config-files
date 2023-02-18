@@ -36,6 +36,16 @@
     ./script.sh
     ```
 
+4.  **(Optional)** By default, script does not check for `.desktop` files in `xsessions` folder. If you use display manager(like sddm or others), add `dwm.desktop` file in `xsessions` folder with following content:
+
+    ```
+    [Desktop Entry]
+    Name=DWM
+    Comment=Dynamic Window Manager
+    Exec=dwm
+    Type=Application
+    ```
+
 #### Feh directory (for backgrounds):
 
 ```
