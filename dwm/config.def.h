@@ -2,18 +2,19 @@
 #include "XF86keysym.h"
 
 static const unsigned int borderpx  = 3;       /* border pixel of windows */
-static const unsigned int gappx     = 5;       /* gaps between windows */
+static const unsigned int gappx     = 8;       /* gaps between windows */
 static const unsigned int snap      = 32;      /* snap pixel */
 static const int showbar            = 1;       /* 0 means no bar */
 static const int topbar             = 1;       /* 0 means bottom bar */
-static const int horizpad           = 9;       /* horizontal padding for statusbar */
-static const int vertpad            = 9;      /* vertical padding for statusbar */
+static const int horizpad           = 8;       /* horizontal padding for statusbar */
+static const int vertpad            = 8;      /* vertical padding for statusbar */
 static const int sidepad            = 0;       /* horizontal padding  for statusbar */
-static const char *fonts[]          = { "UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true" };
-static const char dmenufont[]       = "UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true"; 
+static const char *fonts[]          = { "UbuntuMono Nerd Font:weight=bold:size=11:antialias=true:hinting=true" };
+static const char dmenufont[]       = "UbuntuMono Nerd Font:weight=bold:size=11:antialias=true:hinting=true"; 
 static const char *colors[][3]      = {
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray2, col_gray2 },
+	[SchemeSel]  = { col_cyan, col_gray4,  col_cyan },
+
 };
 
 static const char *tags[] = { " ", " ", " ", " "};
@@ -53,7 +54,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-h", "25" "-fn", dmenufont, "-shb", "#cba6f7", "-shf","#585b70", "-nhb", "#1e1e2e", "-nhf","#585b70" ,NULL }; 
+static const char *dmenucmd[] = { "dmenu_run", "-h", "32" "-fn", dmenufont, "-shb", "#cba6f7", "-shf","#585b70", "-nhb", "#1e1e2e", "-nhf","#585b70" ,NULL }; 
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
