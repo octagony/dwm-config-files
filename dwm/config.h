@@ -9,8 +9,8 @@ static const int topbar             = 1;       /* 0 means bottom bar */
 static const int horizpad           = 8;       /* horizontal padding for statusbar */
 static const int vertpad            = 8;      /* vertical padding for statusbar */
 static const int sidepad            = 0;       /* horizontal padding  for statusbar */
-static const char *fonts[]          = { "UbuntuMono Nerd Font:weight=bold:size=11:antialias=true:hinting=true" };
-static const char dmenufont[]       = "UbuntuMono Nerd Font:weight=bold:size=11:antialias=true:hinting=true"; 
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:weight=bold:size=11:antialias=true:hinting=true" };
+static const char dmenufont[]       = "JetBrains Mono Nerd Font:weight=bold:size=11:antialias=true:hinting=true"; 
 static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray2, col_gray2 },
 	[SchemeSel]  = { col_cyan, col_gray4,  col_cyan },
@@ -26,6 +26,7 @@ static const Rule rules[] = {
 	{ "Brave-browser",        NULL,       NULL,         1 << 1,       0,           -1 },
 	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
 	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
+	{ "vlc",                  NULL,       NULL,         1 << 0,       1,           -1 },
 };
 
 /* layout(s) */
@@ -56,17 +57,17 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-h", "32" "-fn", dmenufont, "-shb", "#cba6f7", "-shf","#585b70", "-nhb", "#1e1e2e", "-nhf","#585b70" ,NULL }; 
 static const char *termcmd[]  = { "st", NULL };
-static const char *brupcmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "up", NULL };
-static const char *brdowncmd[]  = { "/home/octagony/.config/dwm/scripts/brightnessnotifications.sh", "down", NULL };
-static const char *upvol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "up", NULL};
-static const char *downvol[]  =  { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "down", NULL};
-static const char *mutevol[]  = { "/home/octagony/.config/dwm/scripts/volumenotifications.sh", "mute", NULL};
+static const char *brupcmd[]  = { "/home/octagony/.config/dwm/suckless/scripts/brightnessnotifications.sh", "up", NULL };
+static const char *brdowncmd[]  = { "/home/octagony/.config/suckless/dwm/scripts/brightnessnotifications.sh", "down", NULL };
+static const char *upvol[]  = { "/home/octagony/.config/suckless/dwm/scripts/volumenotifications.sh", "up", NULL};
+static const char *downvol[]  =  { "/home/octagony/.config/suckless/dwm/scripts/volumenotifications.sh", "down", NULL};
+static const char *mutevol[]  = { "/home/octagony/.config/suckless/dwm/scripts/volumenotifications.sh", "mute", NULL};
 static const char *prevtrack[]  = { "playerctl", "previous", NULL};
 static const char *nexttrack[]  = { "playerctl", "next", NULL};
 static const char *playpausetrack[]  = { "playerctl", "play-pause", NULL};
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *vifm[]  = { "st","-e", "vifm", NULL };
-static const char *powermenu[] = { "/home/octagony/.config/dwm/scripts/powermenu.sh", NULL};
+static const char *powermenu[] = { "/home/octagony/.config/suckless/dwm/scripts/powermenu.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key                          function           argument */
@@ -86,7 +87,7 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
-	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},
+	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave-browser")},
 	{ MOD2KEY|ControlMask,          XK_BackSpace,                spawn,             SHCMD("slock")},
 	{ MOD2KEY|ControlMask,          XK_p,                				 spawn,             SHCMD("pcmanfm")},
 	{ MOD2KEY|ControlMask,          XK_l,                				 spawn,             SHCMD("liferea")},
