@@ -132,7 +132,7 @@ xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)
 	} else {
 		die("no font specified.");
 	}
-
+	
 	FcBool iscol;
 	if(FcPatternGetBool(xfont->pattern, FC_COLOR, 0, &iscol) == FcResultMatch && iscol) {
 		XftFontClose(drw->dpy, xfont);

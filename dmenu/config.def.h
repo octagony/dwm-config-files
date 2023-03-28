@@ -1,4 +1,3 @@
-
 #include "./colorschemes/catppuccin.h"
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */

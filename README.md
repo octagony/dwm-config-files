@@ -7,7 +7,7 @@
 #### What i use:
 
 - **Feh** as wallpapers manager
-- **vifm** as file manager (include config)
+- **vifm** as file manager
 - **dunst** as notifications manager (include config)
 - **flameshot** for screenshots
 - **brightnessctl** and **pamixer** for volume and brightness control
@@ -60,10 +60,9 @@
 - **pertag**
 - **preserveonrestart**
 - **restartsig**
-- **statuspadding**
-- **fullgaps**
-- **barpadding**
+- **vanitygaps**
 - **status2d**
+- **status2d-systray**
 
 #### DMenu Patches:
 
