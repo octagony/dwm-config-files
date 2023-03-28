@@ -9,23 +9,23 @@ then
 mkdir .config
 fi
 
-cp -r dwm-config-files/{dmenu,dunst,dwm,slock,slstatus,st,vifm} "$HOME"/.config/
+cp -r dwm-config-files/{dmenu,dunst,dwm,slock,slstatus,st,vifm} "$HOME"/.config/suckless
 
 touch .xinitrc
 echo "exec dwm" > .xinitrc
 
-cd "$HOME"/.config/st || exit
+cd "$HOME"/.config/suckless/st || exit
 sudo make clean install
-cd "$HOME"/.config/dwm || exit
+cd "$HOME"/.config/suckless/dwm || exit
 sudo make clean install
-cd "$HOME"/.config/dmenu || exit
+cd "$HOME"/.config/suckless/dmenu || exit
 sudo make clean install
-cd "$HOME"/.config/slock || exit
+cd "$HOME"/.config/suckless/slock || exit
 sudo make clean install
-cd "$HOME"/.config/slstatus || exit
+cd "$HOME"/.config/suckless/slstatus || exit
 sudo make clean install
 
-sudo chmod +x "$HOME"/.config/dwm/scripts/{powermenu.sh,volumenotifications.sh,brightnessnotifications.sh}
+sudo chmod +x "$HOME"/.config/suckless/dwm/scripts/{powermenu.sh,volumenotifications.sh,brightnessnotifications.sh}
 
 cd "$HOME" || exit
 mkdir .dwm
