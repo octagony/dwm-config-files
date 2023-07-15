@@ -67,9 +67,9 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function 		      format         		    argument */
      { cpu_perc, 		      "^c#f38ba8^[   %s%% | ",      NULL },
-	{ ram_perc, 		      "   %s%% ] ",         NULL },
-  { wifi_essid,         "^c#fab387^[   %s | ",         "wlan0" },	
-	{ battery_perc, 	    "  %s%% ] ",          "BAT1" },
+	{ ram_perc, 		      " 󰍛 %s%% ] ",         NULL },
+  { wifi_essid,         "^c#fab387^[   %s | ",         "wlo1" },	
+	{ battery_perc, 	    " 󰁹 %s%% ] ",          "BAT1" },
 	{ kernel_release, 		"^c#a6e3a1^[   %s | ",         NULL },
 	{ keymap, 		      	"   %s ] ",	          NULL },
 	{ datetime,           "%s",          		    "^c#89dceb^[   %a, %d.%m. |^c#74c7ec^   %I:%M %p ] "},

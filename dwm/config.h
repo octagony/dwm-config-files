@@ -81,7 +81,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-h", "32" "-fn", dmenufont, "-shb", "#cba6f7", "-shf","#585b70", "-nhb", "#1e1e2e", "-nhf","#585b70" ,NULL }; 
 static const char *termcmd[]  = { "st", NULL };
-static const char *brupcmd[]  = { "/home/octagony/.config/dwm/suckless/scripts/brightnessnotifications.sh", "up", NULL };
+static const char *brupcmd[]  = { "/home/octagony/.config/suckless/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/suckless/dwm/scripts/brightnessnotifications.sh", "down", NULL };
 static const char *upvol[]  = { "/home/octagony/.config/suckless/dwm/scripts/volumenotifications.sh", "up", NULL};
 static const char *downvol[]  =  { "/home/octagony/.config/suckless/dwm/scripts/volumenotifications.sh", "down", NULL};
@@ -90,7 +90,7 @@ static const char *prevtrack[]  = { "playerctl", "previous", NULL};
 static const char *nexttrack[]  = { "playerctl", "next", NULL};
 static const char *playpausetrack[]  = { "playerctl", "play-pause", NULL};
 static const char *flameshot[]  = { "flameshot", "gui", NULL };
-static const char *vifm[]  = { "st","-e", "vifm", NULL };
+static const char *joshuto[]  = { "st","-e", "joshuto", NULL };
 static const char *powermenu[] = { "/home/octagony/.config/suckless/dwm/scripts/powermenu.sh", NULL};
 static const char *configscript[] = { "/home/octagony/.config/suckless/dwm/scripts/config.sh", NULL};
 
@@ -109,7 +109,7 @@ static const Key keys[] = {
 	{ 0, 				                    XF86XK_AudioPlay,						 spawn,           	{.v = playpausetrack} },
 	{ MOD2KEY|ControlMask, 		      XK_c, 			                 spawn, 	          {.v = configscript} },
 	{ MOD2KEY,                      XK_s,                        spawn,      		   	{.v = flameshot} },
-	{ MOD2KEY|ControlMask,          XK_v,                        spawn,             {.v = vifm} },
+	{ MOD2KEY|ControlMask,          XK_j,                        spawn,             {.v = joshuto} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},

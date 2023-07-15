@@ -1234,6 +1234,9 @@ xinit(int cols, int rows)
 	/* spare font (font2) */
 	xloadsparefont();
 
+	/* spare font (font2) */
+	xloadsparefont();
+
 	/* colors */
 	xw.cmap = XCreateColormap(xw.dpy, parent, xw.vis, None);
 	xloadcols();
