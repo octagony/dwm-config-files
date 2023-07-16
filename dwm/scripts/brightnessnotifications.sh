@@ -7,11 +7,11 @@ function send_notification(){
 
 case $1 in
 up)
-    rumos inc 10
+    rumos inc 5
     send_notification $1
     ;;
 down)
-    rumos dec 10
+    rumos dec 5 
     send_notification $1
     ;;
 esac
