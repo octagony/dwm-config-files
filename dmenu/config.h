@@ -1,4 +1,3 @@
-
 #include "./colorschemes/catppuccin.h"
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
@@ -8,7 +7,7 @@ static int min_width = 1000;                    /* minimum width when centered *
 static const char *fonts[] = {
 	"UbuntuMono Nerd Font:weight=bold:size=12:antialias=true:hinting=true"
 };
-static const char *prompt      = "What do you want?";      /* -p  option; prompt to the left of input field */
+static const char *prompt      = "You again?";      /* -p  option; prompt to the left of input field */
 static unsigned int lines      = 0;
 static unsigned int columns    = 0;
 /* -h option; minimum height of a menu line */

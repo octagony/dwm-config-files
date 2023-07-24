@@ -79,7 +79,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-h", "32" "-fn", dmenufont, "-shb", "#cba6f7", "-shf","#585b70", "-nhb", "#1e1e2e", "-nhf","#585b70" ,NULL }; 
+static const char *dmenucmd[] = { "dmenu_run","-l", "6", "-g","1","-h", "32" "-fn", dmenufont, "-shb", "#cba6f7", "-shf","#585b70", "-nhb", "#1e1e2e", "-nhf","#585b70" ,NULL }; 
 static const char *termcmd[]  = { "st", NULL };
 static const char *brupcmd[]  = { "/home/octagony/.config/suckless/dwm/scripts/brightnessnotifications.sh", "up", NULL };
 static const char *brdowncmd[]  = { "/home/octagony/.config/suckless/dwm/scripts/brightnessnotifications.sh", "down", NULL };
