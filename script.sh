@@ -1,12 +1,18 @@
 #!/bin/bash
 CONF=$HOME/.config
+SUCKLESS=$HOME/suckless
 
 cd "$HOME" || exit 
-sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm flameshot feh brightnessctl pamixer ttf-ubuntu-mono-nerd ttf-jetbrains-mono firefox vifm playerctl
+sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm flameshot feh brightnessctl pamixer ttf-ubuntu-mono-nerd ttf-jetbrains-mono playerctl
 
 if [ ! -d "$CONF" ];
 then
 mkdir .config
+fi
+
+if [ ! -d "$SUCKLESS" ];
+then
+mkdir "$HOME/.config/suckless"
 fi
 
 cp -r dwm-config-files/{dmenu,dunst,dwm,slock,slstatus,st,vifm} "$HOME"/.config/suckless
