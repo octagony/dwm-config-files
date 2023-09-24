@@ -1,12 +1,11 @@
 #!/bin/bash
 
-
 run_term="st -e nvim"
 config_path="$HOME/.config"
 
 config ()
 {
-    options="Alacritty\nFastfetch\nFish\nNvim\nDWM\nSt\nSlstatus\nDmenu\nTmux Main\nTmux Statusline\nZellij" 
+    options="Alacritty\nFastfetch\nFish\nNvim\nDWM\nSt\nSlstatus\nDmenu\nTmux Main\nTmux Statusline" 
     selected=$(echo -e $options | dmenu -c -g 1 -fn "JetBrainsMono Nerd Font" -nb '#1e1e2d' -nf "#abe9b3" -sb "#d5aeea" -sf "#1e1d2d" -shb "#cba6f7" -shf "#585b70" -nhb "#1e1e2e" -nfh "#585b70" -l 15 -h 30 -p '')
      if [[ $selected = "Alacritty" ]]; then
         $run_term "$config_path/alacritty/alacritty.yml"
@@ -34,8 +33,6 @@ config ()
         $run_term "$HOME/.tmux.conf"
      elif [[ $selected = "Tmux Statusline" ]]; then
         $run_term "$config_path/tmux/statusline.conf"
-     elif [[ $selected = "Zellij" ]]; then
-        $run_term "$config_path/zellij/config.kdl"
      fi
 }
 

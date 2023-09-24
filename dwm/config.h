@@ -16,11 +16,17 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int stairpx   = 20;       /* depth of the stairs layout */
+static const int stairdirection     = 1;        /* 0: left-aligned, 1: right-aligned */
+static const int stairsamesize      = 1;        /* 1 means shrink all the staired windows to the same size */
+#define ICONSIZE 18   /* icon size */
+#define ICONSPACING 8 /* space between icon and title */
 static const char *fonts[]          = { "JetBrains Mono Nerd Font:weight=bold:size=11:antialias=true:hinting=true" };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:weight=bold:size=11:antialias=true:hinting=true"; 
 static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray2, col_gray2 },
 	[SchemeSel]  = { col_cyan, col_gray4,  col_cyan },
+  [SchemeTitle]  = { col_title, col_gray4, col_gray4 },
 };
 
 /* tagging */
@@ -48,10 +54,11 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
  static const Layout layouts[] = {
  	/* symbol     arrange function */
-	{ "| [@]",      spiral },
- 	{ "| [T]",      tile },    /* first entry is default */
-	{ "| [F]",      NULL },    /* no layout function means floating behavior */
+  { "| [S]",      stairs },
+  { "| [@]",      spiral },
+	{ "| [F]",      NULL },    
  	{ "| [M]",      monocle },
+ 	{ "| [T]",      tile },    
 	{ "| [\\]",     dwindle },
 	{ "| H[]",      deck },
 	{ "| TTT",      bstack },
@@ -62,7 +69,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 	{ "| :::",      gaplessgrid },
 	{ "| |M|",      centeredmaster },
 	{ "| >M>",      centeredfloatingmaster },
-	{ "| ><>",      NULL },    /* no layout function means floating behavior */
+	{ "| ><>",      NULL },    
 	{ NULL,       NULL },
  };
 
@@ -142,10 +149,10 @@ static const Key keys[] = {
 	{ MODKEY|MOD2KEY|ShiftMask,     XK_0,                        defaultgaps,       {0} },
 	{ MODKEY,                       XK_Tab,                      view,              {0} },
 	{ MODKEY,                       XK_q,                        killclient,        {0} },
+	{ MODKEY,                       XK_s,                        setlayout,         {.v = &layouts[0]} },
 	{ MODKEY,                       XK_t,                        setlayout,         {.v = &layouts[1]} },
 	{ MODKEY,                       XK_f,                        setlayout,         {.v = &layouts[2]} },
 	{ MODKEY,                       XK_m,                        setlayout,         {.v = &layouts[3]} },
-	{ MODKEY,                       XK_s,                        setlayout,         {.v = &layouts[0]} },
 	{ MODKEY,                       XK_space,                    setlayout,         {0} },
 	{ MODKEY|ShiftMask,             XK_space,                    togglefloating,    {0} },
 	{ MODKEY,                       XK_0,                        view,              {.ui = ~0 } },

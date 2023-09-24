@@ -1,0 +1,98 @@
+From a189dd70bd7c0789a11f304ceb75fd2d66fa405d Mon Sep 17 00:00:00 2001
+From: Ehsan Ghorbannezhad <ehsan@disroot.org>
+Date: Sat, 30 Apr 2022 01:15:20 +0430
+Subject: [PATCH] add a new layout called stairs
+
+---
+ config.def.h |  5 +++++
+ dwm.c        | 38 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+diff --git a/config.def.h b/config.def.h
+index a2ac963..7774f1e 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,6 +5,9 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
+ static const unsigned int snap      = 32;       /* snap pixel */
+ static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
++static const unsigned int stairpx   = 20;       /* depth of the stairs layout */
++static const int stairdirection     = 1;        /* 0: left-aligned, 1: right-aligned */
++static const int stairsamesize      = 1;        /* 1 means shrink all the staired windows to the same size */
+ static const char *fonts[]          = { "monospace:size=10" };
+ static const char dmenufont[]       = "monospace:size=10";
+ static const char col_gray1[]       = "#222222";
+@@ -42,6 +45,7 @@ static const Layout layouts[] = {
+ 	{ "[]=",      tile },    /* first entry is default */
+ 	{ "><>",      NULL },    /* no layout function means floating behavior */
+ 	{ "[M]",      monocle },
++	{ "[S]",      stairs },
+ };
+
+ /* key definitions */
+@@ -77,6 +81,7 @@ static Key keys[] = {
+ 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+ 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+ 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
++	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[3]} },
+ 	{ MODKEY,                       XK_space,  setlayout,      {0} },
+ 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+ 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+diff --git a/dwm.c b/dwm.c
+index 5646a5c..fcdbb06 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -207,6 +207,7 @@ static void seturgent(Client *c, int urg);
+ static void showhide(Client *c);
+ static void sigchld(int unused);
+ static void spawn(const Arg *arg);
++static void stairs(Monitor *m);
+ static void tag(const Arg *arg);
+ static void tagmon(const Arg *arg);
+ static void tile(Monitor *);
+@@ -1659,6 +1660,43 @@ spawn(const Arg *arg)
+ 	}
+ }
+
++void
++stairs(Monitor *m)
++{
++	unsigned int i, n, h, mw, my;
++	unsigned int ox, oy, ow, oh; /* stair offset values */
++	Client *c;
++
++	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
++	if (n == 0)
++		return;
++
++	if (n > m->nmaster)
++		mw = m->nmaster ? m->ww * m->mfact : 0;
++	else
++		mw = m->ww;
++
++	for (i = my = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
++		if (i < m->nmaster) {
++			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
++			resize(c, m->wx, m->wy + my, mw - (2 * c->bw), h - (2 * c->bw), 0);
++			if (my + HEIGHT(c) < m->wh)
++				my += HEIGHT(c);
++		} else {
++			oy = i - m->nmaster;
++			ox = stairdirection ? n - i - 1 : (stairsamesize ? i - m->nmaster : 0);
++			ow = stairsamesize ? n - m->nmaster - 1 : n - i - 1;
++			oh = stairsamesize ? ow : i - m->nmaster;
++			resize(c,
++			       m->wx + mw + (ox * stairpx),
++			       m->wy + (oy * stairpx),
++			       m->ww - mw - (2 * c->bw) - (ow * stairpx),
++			       m->wh - (2 * c->bw) - (oh * stairpx),
++			       0);
++		}
++	}
++}
++
+ void
+ tag(const Arg *arg)
+ {
+--
+2.36.0
