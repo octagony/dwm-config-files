@@ -62,15 +62,36 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
+ * 
+ * COLORSCHEMES
+ * Catppuccin : {
+ * cpu/ram_perc #f38ba8
+ * wifi_essid/battery_perc #fab387
+ * kernel_release/keymap #a6e3a1
+ * datetime #89dceb 
+ * }
+ * Everforest:{
+ * cpu/ram_perc #e67e80
+ * wifi_essid/battery_perc #e69875
+ * kernel_release/keymap #a7c080
+ * datetime #7fbbb3
+ * }
+ * 
+ * Gruvbox:{
+ * cpu/ram_perc #fb4934
+ * wifi_essid/battery_perc #f38019
+ * kernel_release/keymap #b8bb26
+ * datetime #83a598
+ * }
  */
 
 static const struct arg args[] = {
 	/* function 		      format         		    argument */
-     { cpu_perc, 		      "^c#f38ba8^[   %s%% | ",      NULL },
+  { cpu_perc, 		      "^c#f38ba8^[   %s%% | ",      NULL },
 	{ ram_perc, 		      " 󰍛 %s%% ] ",         NULL },
-  { wifi_essid,         "^c#fab387^[   %s | ",         "wlo1" },	
+  { wifi_essid,         "^c#fab387^[   %s | ",         "wlan0" },	
 	{ battery_perc, 	    " 󰁹 %s%% ] ",          "BAT1" },
 	{ kernel_release, 		"^c#a6e3a1^[   %s | ",         NULL },
 	{ keymap, 		      	"   %s ] ",	          NULL },
-	{ datetime,           "%s",          		    "^c#89dceb^[   %a, %d.%m. |^c#74c7ec^   %I:%M %p ] "},
+	{ datetime,           "%s",          		    "^c#89dceb^[   %a, %d.%m. |   %I:%M %p ] "},
 };
