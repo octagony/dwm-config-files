@@ -15,7 +15,7 @@ then
 mkdir "$HOME/.config/suckless"
 fi
 
-cp -r dwm-config-files/{dmenu,dunst,dwm,slock,slstatus,st,vifm} "$HOME"/.config/suckless
+cp -r dwm-config-files/{dmenu,dunst,dwm,slock,slstatus,st} "$HOME"/.config/suckless
 
 touch .xinitrc
 echo "exec dwm" > .xinitrc
@@ -31,7 +31,7 @@ sudo make clean install
 cd "$HOME"/.config/suckless/slstatus || exit
 sudo make clean install
 
-sudo chmod +x "$HOME"/.config/suckless/dwm/scripts/{powermenu.sh,volumenotifications.sh,brightnessnotifications.sh}
+sudo chmod +x "$HOME"/.config/suckless/dwm/scripts/{powermenu.sh,volumenotifications.sh,brightnessnotifications.sh,config.sh}
 
 cd "$HOME" || exit
 mkdir .dwm
@@ -48,4 +48,3 @@ sudo ninja -C build
 echo "---------------------"
 echo "Now, just type 'startx'"
 echo "---------------------"
-
