@@ -2,7 +2,9 @@
 
 ### All in one suckless tools(dwm, dmenu, st, slstatus, slock)
 
-![Alt text](/img/mainImg.png?raw=true "Title")
+![Alt text](/img/s1.png?raw=true "First image")
+![Alt text](/img/s2.png?raw=true "Second image")
+![Alt text](/img/s3.png?raw=true "Third image")
 
 #### What i use:
 
