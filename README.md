@@ -9,7 +9,6 @@
 #### What i use:
 
 - **Feh** as wallpapers manager
-- **vifm** as file manager
 - **dunst** as notifications manager (include config)
 - **flameshot** for screenshots
 - **brightnessctl** and **pamixer** for volume and brightness control
@@ -63,25 +62,29 @@
 - **pertag**
 - **preserveonrestart**
 - **restartsig**
-- **vanitygaps**
+- **rotatestack**
+- **stairs**
 - **status2d**
 - **status2d-systray**
+- **titlecolor**
+- **vanitygaps**
+- **winicon**
 
 #### DMenu Patches:
 
-- **caseinsensitive**
-- **lineheight**
-- **fuzzyhighlight**
-- **center**
 - **border**
+- **caseinsensitive**
+- **center**
+- **fuzzyhighlight**
 - **grid**
+- **lineheight**
 
 #### St Patches:
 
 - **alpha**
-- **scrollback**
-- **scrollback-mouse**
+- **font2**
 - **glyph-wide-support**
+- **scrollback-mouse**
 
 #### Slock Patches:
 
