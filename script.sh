@@ -3,7 +3,7 @@ CONF=$HOME/.config
 SUCKLESS=$HOME/suckless
 
 cd "$HOME" || exit 
-sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm flameshot feh brightnessctl pamixer ttf-ubuntu-mono-nerd ttf-jetbrains-mono playerctl
+sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm flameshot feh brightnessctl pamixer ttf-ubuntu-mono-nerd ttf-jetbrains-mono playerctl imlib2
 
 if [ ! -d "$CONF" ];
 then
