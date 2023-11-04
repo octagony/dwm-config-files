@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 options=(
@@ -11,6 +10,9 @@ Fish
 Nvim
 St
 Slstatus
+Bash
+Zsh
+Fish
 Tmux
 Tmux Statusline")
 
@@ -19,22 +21,22 @@ choice=$(echo -e "${options[@]}" | dmenu -c -g 1 -fn "JetBrainsMono Nerd Font" -
 case "$choice" in
 Alacritty)
 	choice="$HOME/.config/alacritty/"
-	;;
+  ;;
 DWM)
 	choice="$HOME/.config/suckless/dwm/"
-	;;
+  ;;
 Dmenu)
 	choice="$HOME/.config/suckless/dmenu/"
-	;;
+  ;;
 Dunst)
 	choice="$HOME/.config/dunst/"
-	;;
+  ;;
 Fastfetch)
 	choice="$HOME/.config/fastfetch/"
-	;;
+  ;;
 Fish)
 	choice="$HOME/.config/fish/"
-	;;
+  ;;
 Nvim)
     choice="$HOME/.config/nvim"
     ;;
@@ -44,8 +46,17 @@ St)
 Slstatus)
     choice="$HOME/.config/suckless/slstatus/"
     ;;
+Bash)
+    choice="$HOME/.bashrc"
+    ;;
+Zsh)
+    choice="$HOME/.zshrc"
+    ;;
+Fish)
+    choice="$HOME/.config/fish/"
+    ;;
 Tmux)
-    choice="$HOME/.tmux.conf"
+    choice="$HOME/.config/tmux/tmux.conf"
     ;;
 'Tmux Statusline')
     choice="$HOME/.config/tmux/statusline.conf"

@@ -33,14 +33,14 @@ static const char *colors[][3]      = {
 static const char *tags[] = { " ", " ", " ", " ",""};
 
 static const Rule rules[] = {
-	/* class                instance     title         tags mask     isfloating   monitor */
-	{ "Pcmanfm",              NULL,       NULL,         1 << 0,       1,           -1 },
-	{ "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
-	{ "Brave-browser",        NULL,       NULL,         1 << 1,       0,           -1 },
-	{ "VSCodium",             NULL,       NULL,         1 << 2,       0,           -1 },
-	{ "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
-	{ "vlc",                  NULL,       NULL,         1 << 0,       1,           -1 },
-	{ "discord",              NULL,       NULL,         1 << 4,       1,           -1 },
+	/*       class                instance     title         tags mask     isfloating   monitor */
+       {   "Pcmanfm",              NULL,       NULL,         1 << 0,       1,           -1 },
+       {   "firefox",              NULL,       NULL,         1 << 1,       0,           -1 },
+       {   "Thorium-browser",      NULL,       NULL,         1 << 1,       0,           -1 },
+       {   "Code",                 NULL,       NULL,         1 << 2,       0,           -1 },
+       {   "TelegramDesktop",      NULL,       NULL,         1 << 3,       1,           -1 },
+       {   "vlc",                  NULL,       NULL,         1 << 0,       1,           -1 },
+       {   "discord",              NULL,       NULL,         1 << 4,       1,           -1 },
 };
 
 /* layout(s) */
@@ -100,6 +100,7 @@ static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *joshuto[]  = { "st","-e", "joshuto", NULL };
 static const char *powermenu[] = { "/home/octagony/.config/suckless/dwm/scripts/powermenu.sh", NULL};
 static const char *configscript[] = { "/home/octagony/.config/suckless/dwm/scripts/config.sh", NULL};
+static const char *browserbookmarksscript[] = { "/home/octagony/.config/suckless/dwm/scripts/browserbookmarks.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key                          function           argument */
@@ -115,12 +116,13 @@ static const Key keys[] = {
 	{ 0, 				                    XF86XK_AudioNext,						 spawn,           	{.v = nexttrack} },
 	{ 0, 				                    XF86XK_AudioPlay,						 spawn,           	{.v = playpausetrack} },
 	{ MOD2KEY|ControlMask, 		      XK_c, 			                 spawn, 	          {.v = configscript} },
+	{ MOD2KEY|ControlMask, 		      XK_m, 			                 spawn, 	          {.v = browserbookmarksscript} },
 	{ MOD2KEY,                      XK_s,                        spawn,      		   	{.v = flameshot} },
 	{ MOD2KEY|ControlMask,          XK_j,                        spawn,             {.v = joshuto} },
 	{ MOD2KEY|ControlMask, 		      XK_Delete, 			             spawn, 	          {.v = powermenu} },
 	{ MOD2KEY|ControlMask,          XK_f,                        spawn,             SHCMD("firefox")},
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
-	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("brave")},
+	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("thorium-browser")},
 	{ MOD2KEY|ControlMask,          XK_p,                				 spawn,             SHCMD("pcmanfm")},
 	{ MODKEY|ShiftMask,             XK_j,                        rotatestack,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                        rotatestack,       {.i = -1 } },
