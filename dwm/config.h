@@ -21,8 +21,8 @@ static const int stairdirection     = 1;        /* 0: left-aligned, 1: right-ali
 static const int stairsamesize      = 1;        /* 1 means shrink all the staired windows to the same size */
 #define ICONSIZE 18   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:weight=bold:size=11:antialias=true:hinting=true" };
-static const char dmenufont[]       = "JetBrains Mono Nerd Font:weight=bold:size=11:antialias=true:hinting=true"; 
+static const char *fonts[]          = { "JetBrainsMonoNL:weight=bold:size=11:antialias=true:hinting=true" };
+static const char dmenufont[]       = "JetBrainsMonoNL:weight=bold:size=11:antialias=true:hinting=true"; 
 static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray2, col_gray2 },
 	[SchemeSel]  = { col_cyan, col_gray4,  col_cyan },
@@ -124,6 +124,7 @@ static const Key keys[] = {
 	{ MOD2KEY|ControlMask,          XK_t,                        spawn,             SHCMD("telegram-desktop")},
 	{ MOD2KEY|ControlMask,          XK_b,                        spawn,             SHCMD("thorium-browser")},
 	{ MOD2KEY|ControlMask,          XK_p,                				 spawn,             SHCMD("pcmanfm")},
+	{ MOD2KEY|ControlMask,          XK_o,                				 spawn,             SHCMD("obsidian")},
 	{ MODKEY|ShiftMask,             XK_j,                        rotatestack,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,                        rotatestack,       {.i = -1 } },
 	{ MODKEY,                       XK_j,                        focusstack,        {.i = +1 } },
