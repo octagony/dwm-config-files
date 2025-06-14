@@ -2,7 +2,7 @@
 feh --bg-fill --randomize ~/.wallpapers/*
 
 #Setup Picom
-"$HOME"/.config/picom/build/src/./picom -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness-in-tag 10 --animation-stiffness-tag-change 10 --animation-dampening 10 --animation-clamping false &
+"$HOME"/.config/picom/build/src/./picom -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness-in-tag 200 --animation-stiffness-tag-change 200 --animation-dampening 10 &
 
 #Exec slstatus
 exec slstatus &

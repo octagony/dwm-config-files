@@ -13,7 +13,8 @@ if [ ! -d "$SUCKLESS" ]; then
   mkdir "$HOME/.config/suckless"
 fi
 
-cp -r dwm-config-files/{dmenu,dunst,dwm,slock,slstatus,st} "$HOME"/.config/suckless
+cp -r dwm-config-files/{dmenu,dwm,slock,slstatus,st} "$HOME"/.config/suckless
+cp -r dwm-config-files/dunst "$HOME"/.config
 
 touch .xinitrc
 echo "exec dwm" >.xinitrc
