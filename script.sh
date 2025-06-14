@@ -1,6 +1,7 @@
 #!/bin/bash
 CONF=$HOME/.config
 SUCKLESS=$HOME/suckless
+ICONS=$HOME/.local/share/icons
 
 cd "$HOME" || exit
 sudo pacman -Sy base-devel xorg-server xorg-xinit libx11 libxinerama libxft libxext libxcb xcb-util-renderutil xcb-util-image pixman dbus libconfig libglvnd pcre libev uthash xorgproto xcb-util meson ninja webkit2gtk dunst pcmanfm flameshot feh brightnessctl pamixer ttf-ubuntu-mono-nerd ttf-jetbrains-mono playerctl imlib2
@@ -15,6 +16,12 @@ fi
 
 cp -r dwm-config-files/{dmenu,dwm,slock,slstatus,st} "$HOME"/.config/suckless
 cp -r dwm-config-files/dunst "$HOME"/.config
+
+if [ ! -d "$ICONS" ]; then
+  mkdir -p $HOME/.local/share/icons
+fi
+
+cp -R dwm-config-files/dunst-icons $HOME/.local/share/icons/dunst
 
 touch .xinitrc
 echo "exec dwm" >.xinitrc
